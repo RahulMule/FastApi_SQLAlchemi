@@ -1,0 +1,4 @@
+app/__pycache__/main.cpython-313.pyc
+app/config/__pycache__/db.cpython-313.pyc
+app/schemas/__pycache__/gameschema.cpython-313.pyc
+app/models/__pycache__/game.cpython-313.pyc
