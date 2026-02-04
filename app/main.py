@@ -32,3 +32,12 @@ def deletegame(id:int, db: Session = Depends(get_db)):
         return "Game deleted successfully"
     else:
         raise HTTPException(status_code=404,detail="game does not exists")
+    
+@app.patch("/game/{id}")
+def updatgame(id:int,body:GameSchema, db: Session = Depends(get_db)):
+    update_game = Game(name=body.name,type= body.type)
+    existing_games = db.query(Game).filter(Game.id==id)
+    existing_game = existing_games.first()
+    db.query(Game).update(existing_game)
+    return "game updated successfully"
+
