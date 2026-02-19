@@ -31,7 +31,7 @@ def deletegame(id:int, db: Session = Depends(get_db)):
         db.commit()
         return "Game deleted successfully"
     else:
-        raise HTTPException(status_code=404,detail="game does not exists")
+        raise HTTPException(status_code=404,detail="game does not existss")
     
 @app.patch("/game/{id}")
 def updatgame(id:int,body:GameSchema, db: Session = Depends(get_db)):
